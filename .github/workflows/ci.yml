@@ -12,14 +12,14 @@ jobs:
 
     steps:
     - name: Build Docker image
-      uses: docker build -t app.py:${{ github.sha }} .
+      uses: docker build -t app:${{ github.sha }} .
 
     - name: List Docker images
       run: docker images
 
     - name: Test Docker image runs
       run: |
-          docker run -d --name test-container app.py:${{ github.sha }}
+          docker run -d --name test-container app:${{ github.sha }}
           sleep 5
           docker ps
           docker logs test-container
