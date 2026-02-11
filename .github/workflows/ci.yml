@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Build Docker image
-      uses: docker build -t app:${{ github.sha }} .
+      uses: docker build -t app:${{ github.sha }} ./luft/home/Projects/week4_project/Dockerfile
 
     - name: List Docker images
       run: docker images
