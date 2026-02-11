@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Build Docker image
-      uses: docker build -t app:latest
+      uses: docker build -t app:latest .
 
     - name: List Docker images
       run: docker images
