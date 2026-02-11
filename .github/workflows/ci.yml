@@ -24,8 +24,25 @@ jobs:
             python -m pip install --upgrade pip
             pip install flask
             pip install pytest
-
-    - name: Run tests
-      run: |
-          pytest
+    
+  docker-build:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+    
+      - name: Build Docker image
+        run: docker build -t my-app:${{ github.sha }} .
+    
+      - name: List Docker images
+        run: docker images
+    
+      - name: Test Docker image runs
+        run: |
+           docker run -d --name test-container my-app:${{ github.sha }}
+           sleep 5
+           docker ps
+           docker logs test-container
+           docker stop test-container
+       
           
