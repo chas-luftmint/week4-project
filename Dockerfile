@@ -1,13 +1,8 @@
-FROM python:3.10-slim-buster
-
 # Set a working directory inside the container
-WORKDIR .
-
-# Copy the requirements.txt file for better caching
-COPY requirements.txt .
+WORKDIR /app
 
 # Copy actual application code
-COPY app.py
+COPY . /app
 
 # Expose standard Flask port (default is 5000) which declares that the container is listening on port 5000, but doesn't make it public
 EXPOSE 5000
