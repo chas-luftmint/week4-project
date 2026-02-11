@@ -1,3 +1,4 @@
+FROM python:3.10-alpine
 # Set a working directory inside the container
 WORKDIR .
 
