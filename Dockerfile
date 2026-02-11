@@ -1,5 +1,5 @@
 # Set a working directory inside the container
-WORKDIR /app
+WORKDIR .
 
 # Copy actual application code
 COPY . /app
