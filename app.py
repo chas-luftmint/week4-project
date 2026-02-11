@@ -1,4 +1,4 @@
-# Importing flask class from the flask module like this:
+# Importing flask
 from flask import Flask
 
 # Instance creation of flask class
