@@ -1,5 +1,7 @@
+FROM python:3.10-slim-buster
+
 # Set a working directory inside the container
-WORKDIR /app
+WORKDIR .
 
 # Copy the requirements.txt file for better caching
 COPY requirements.txt .
