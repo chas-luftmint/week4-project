@@ -12,14 +12,14 @@ jobs:
 
     steps:
     - name: Build Docker image
-      uses: docker build -t app:${{ github.sha }} ./luft/home/Projects/week4_project/Dockerfile
+      uses: docker build -t app:latest
 
     - name: List Docker images
       run: docker images
 
     - name: Test Docker image runs
       run: |
-          docker run -d --name test-container app:${{ github.sha }}
+          docker run -d --name test-container app:latest
           sleep 5
           docker ps
           docker logs test-container
